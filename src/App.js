@@ -20,7 +20,6 @@ function App() {
   const [todos, setTodo] = useState(state.todos);
   useEffect(() => {
     dispatch(getAllTodo());
-    
   }, [todos]); 
   return (
     <Router>

@@ -11,3 +11,16 @@ export function getAllTodo() {
       );
     };
 }
+
+export function completeTodo(id) {
+  return dispatch => {
+    axios.put(`https://5cea41c50c871100140bf437.mockapi.io/api/v1/todos/${id}`, {
+      completed: true
+    })
+    .then(res =>
+      dispatch({
+        type: "COMPLETE_TODO", id: id
+      })
+    );
+  };
+}
